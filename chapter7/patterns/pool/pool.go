@@ -13,10 +13,10 @@ import (
 // multiple goroutines. The resource being managed must implement
 // the io.Closer interface.
 type Pool struct {
-	m         sync.Mutex
-	resources chan io.Closer
-	factory   func() (io.Closer, error)
-	closed    bool
+	m         sync.Mutex                // 互斥锁保证在多个goroutine访问资源池时，池内的值是安全的
+	resources chan io.Closer            // io.Closer接口类型的通道,作为有缓冲的通道用来保存共享的资源。由于通道的类型是一个接口，所以池可以管理任意实现了io.Closer接口的资源类型
+	factory   func() (io.Closer, error) // 当池需要一个新资源时，可以使用该函数创建
+	closed    bool                      // 标志Pool是否已经被关闭
 }
 
 // ErrPoolClosed is returned when an Acquire returns on a
