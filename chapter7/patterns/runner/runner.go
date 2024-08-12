@@ -14,17 +14,17 @@ import (
 type Runner struct {
 	// interrupt channel reports a signal from the
 	// operating system.
-	interrupt chan os.Signal
+	interrupt chan os.Signal //  interrupt 通道报告从操作系统发送的信号
 
 	// complete channel reports that processing is done.
-	complete chan error
+	complete chan error // complete 通道报告处理任务已经完成
 
 	// timeout reports that time has run out.
-	timeout <-chan time.Time
+	timeout <-chan time.Time // timeout报告处理任务已经超时
 
 	// tasks holds a set of functions that are executed
 	// synchronously in index order.
-	tasks []func(int)
+	tasks []func(int) // tasks持有一组以索引顺序依次执行的函数
 }
 
 // ErrTimeout is returned when a value is received on the timeout channel.

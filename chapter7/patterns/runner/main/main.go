@@ -8,11 +8,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/goinaction/code/chapter7/patterns/runner"
+	"github.com/runner"
 )
 
 // timeout is the number of second the program has to finish.
-const timeout = 3 * time.Second
+const timeout = 5 * time.Second
 
 // main is the entry point for the program.
 func main() {
