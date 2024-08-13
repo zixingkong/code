@@ -17,7 +17,7 @@ func TestDownload(t *testing.T) {
 		statusCode int
 	}{
 		{
-			"http://www.goinggo.net/feeds/posts/default?alt=rss",
+			"http://www.tencent.com",
 			http.StatusOK,
 		},
 		{

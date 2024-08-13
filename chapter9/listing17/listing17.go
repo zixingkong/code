@@ -2,10 +2,9 @@
 package main
 
 import (
+	"github.com/handlers/handlers"
 	"log"
 	"net/http"
-
-	"github.com/goinaction/code/chapter9/listing17/handlers"
 )
 
 // main is the entry point for the application.

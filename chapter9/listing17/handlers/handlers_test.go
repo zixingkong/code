@@ -4,11 +4,10 @@ package handlers_test
 
 import (
 	"encoding/json"
+	"github.com/handlers/handlers"
 	"net/http"
 	"net/http/httptest"
 	"testing"
-
-	"github.com/goinaction/code/chapter9/listing17/handlers"
 )
 
 const checkMark = "\u2713"
