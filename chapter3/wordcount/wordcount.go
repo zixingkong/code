@@ -3,15 +3,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/chapter3/words"
 	"io/ioutil"
-	"os"
-
-	"github.com/goinaction/code/chapter3/words"
 )
 
 // main is the entry point for the application.
 func main() {
-	filename := os.Args[1]
+	//filename := os.Args[1]
+	filename := "wordcount/gowords.txt"
 
 	contents, err := ioutil.ReadFile(filename)
 	if err != nil {

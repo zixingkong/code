@@ -18,7 +18,7 @@ type user struct {
 }
 
 // notify implements a method with a pointer receiver.
-func (u *user) notify() {
+func (u user) notify() {
 	fmt.Printf("Sending user email to %s<%s>\n",
 		u.name,
 		u.email)
@@ -30,6 +30,7 @@ func main() {
 	u := user{"Bill", "bill@email.com"}
 
 	sendNotification(u)
+	sendNotification(&u)
 
 	// ./listing36.go:32: cannot use u (type user) as type
 	//                     notifier in argument to sendNotification:
